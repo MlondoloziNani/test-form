@@ -3,64 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Client Partnership Interest Form</title>
+  <title>Creative Company Information Form</title>
   <style>
     /* Global Styles */
     body {
       font-family: Arial, sans-serif;
-      background-image: url('https://i.ibb.co/s9g83Pp/SAMW-Screen.png');
+      background-image: url('https://i.ibb.co/82g6ZGL/SAMW-Screen.png');
       background-size: cover;
       background-position: center;
       margin: 0;
       padding: 0;
       color: #333;
     }
+
     form {
-      max-width: 800px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.9); /* Slight opacity for readability */
-      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-sizing: border-box; /* Ensure the padding is included in the width */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
     }
-    form:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
+
     h2 {
       text-align: center;
       color: #444;
-      font-size: 24px;
       margin-bottom: 20px;
     }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
       color: #444;
     }
+
     input, select, textarea {
       width: 100%;
-      padding: 12px; /* Increased padding to ensure inputs are spacious */
+      padding: 10px;
       margin-top: 5px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
-      box-sizing: border-box; /* Ensure padding is included in element width */
+      box-sizing: border-box;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
     input:focus, select:focus, textarea:focus {
       border-color: #84fab0;
       box-shadow: 0 0 5px rgba(132, 250, 176, 0.7);
       outline: none;
     }
+
     button {
       display: block;
       width: 100%;
-      padding: 12px 20px;
+      padding: 15px;
       background: linear-gradient(120deg, #84fab0, #8fd3f4);
       color: white;
       border: none;
@@ -70,112 +70,155 @@
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
+
     button:hover {
       background: linear-gradient(120deg, #8fd3f4, #84fab0);
       transform: translateY(-2px);
     }
+
     button:active {
       transform: translateY(0);
     }
+
     .note {
       font-size: 0.9em;
       color: #555;
     }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-container .full-width {
+      grid-column: span 2;
+    }
   </style>
 </head>
 <body>
-  <h2>Client Partnership Interest Form</h2>
-  <form action="/submit-client-details" method="POST">
-    <!-- Client Information -->
+  <form action="/submit-company-details" method="POST">
+    <h2>Creative Company Information Form</h2>
+
+    <!-- Core Company Information -->
+    <h3>1. Core Company Information</h3>
     <label for="companyName">Company Name</label>
-    <input type="text" id="companyName" name="companyName" placeholder="Enter your company name" required>
-    
-    <label for="contactName">Contact Person</label>
-    <input type="text" id="contactName" name="contactName" placeholder="Enter the full name of the contact person" required>
-    
-    <label for="designation">Designation</label>
-    <select id="designation" name="designation" required>
-      <option value="" disabled selected>Select designation</option>
-      <option value="CEO">CEO</option>
-      <option value="Manager">Manager</option>
-      <option value="Coordinator">Coordinator</option>
-      <option value="Consultant">Consultant</option>
-      <option value="Other">Other</option>
+    <input type="text" id="companyName" name="companyName" placeholder="Enter company name" required>
+
+    <div class="grid-container">
+      <div>
+        <label for="country">Country of Origin</label>
+        <input type="text" id="country" name="country" placeholder="Enter country" required>
+      </div>
+      <div>
+        <label for="foundingYear">Founding Year</label>
+        <input type="number" id="foundingYear" name="foundingYear" placeholder="Enter founding year" required>
+      </div>
+    </div>
+
+    <label for="address">Physical Address</label>
+    <textarea id="address" name="address" rows="3" placeholder="Enter physical address" required></textarea>
+
+    <label for="contact">Contact Information</label>
+    <div class="grid-container">
+      <div>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+      </div>
+      <div>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+      </div>
+    </div>
+    <input type="url" id="website" name="website" placeholder="Company Website (if available)">
+
+    <label for="businessType">Type of Creative Business</label>
+    <select id="businessType" name="businessType" required>
+      <option value="" disabled selected>Select business type</option>
+      <option value="music">Music</option>
+      <option value="film">Film</option>
+      <option value="design">Design</option>
+      <option value="fashion">Fashion</option>
+      <option value="publishing">Publishing</option>
+      <option value="gaming">Gaming</option>
+      <option value="performingArts">Performing Arts</option>
     </select>
 
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="Enter a valid email address" required>
+    <label for="productsServices">Key Products/Services</label>
+    <textarea id="productsServices" name="productsServices" rows="4" placeholder="Enter key products/services" required></textarea>
 
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" required>
+    <label for="registrationNumber">Registration Number (if available)</label>
+    <input type="text" id="registrationNumber" name="registrationNumber" placeholder="Enter registration number">
 
-    <!-- Company Information -->
-    <label for="industry">Industry Type</label>
-    <select id="industry" name="industry" required>
-      <option value="" disabled selected>Select your industry</option>
-      <option value="media">Media & Entertainment</option>
-      <option value="corporate">Corporate Business</option>
-      <option value="government">Government</option>
-      <option value="education">Education</option>
-      <option value="other">Other</option>
+    <label for="embassySource">Embassy Source</label>
+    <input type="text" id="embassySource" name="embassySource" placeholder="Enter embassy source">
+
+    <label for="languages">Languages Used</label>
+    <input type="text" id="languages" name="languages" placeholder="Enter languages used">
+
+    <label for="socialMedia">Social Media Handles</label>
+    <textarea id="socialMedia" name="socialMedia" rows="3" placeholder="Enter social media links"></textarea>
+
+    <!-- Classification Tags -->
+    <h3>2. Classification Tags</h3>
+    <label for="industrySubsector">Creative Industry Sub-sector</label>
+    <select id="industrySubsector" name="industrySubsector" required>
+      <option value="" disabled selected>Select sub-sector</option>
+      <option value="audioVisual">Audio-Visual</option>
+      <option value="visualArts">Visual Arts</option>
+      <option value="culturalHeritage">Cultural Heritage</option>
+      <option value="advertising">Advertising</option>
+      <option value="softwareDevelopment">Software Development</option>
     </select>
 
-    <label for="companySize">Company Size</label>
+    <label for="targetMarkets">Target Markets</label>
+    <select id="targetMarkets" name="targetMarkets[]" multiple required>
+      <option value="local">Local</option>
+      <option value="regional">Regional</option>
+      <option value="international">International</option>
+    </select>
+    <p class="note">* Hold Ctrl/Command to select multiple options.</p>
+
+    <label for="companySize">Size</label>
     <select id="companySize" name="companySize" required>
-      <option value="" disabled selected>Select company size</option>
-      <option value="1-10">1-10 Employees</option>
-      <option value="11-50">11-50 Employees</option>
-      <option value="51-200">51-200 Employees</option>
-      <option value="201+">201+ Employees</option>
+      <option value="" disabled selected>Select size</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
     </select>
 
-    <!-- Services Interested In -->
-    <label for="services">Services of Interest</label>
-    <select id="services" name="services[]" multiple required>
-      <option value="siteTakeover">Website Takeover (R12,000)</option>
-      <option value="leaderboardAd">Leaderboard Ad (R7,500)</option>
-      <option value="sidebarAd">Sidebar Ad (R5,500)</option>
-      <option value="socialMedia">Social Media Campaign (R7,500)</option>
-      <option value="survey">Custom Surveys (R12,000 + R700/hr)</option>
-      <option value="poll">Poll Creation (R3,500)</option>
-      <option value="advertorial">Advertorial Content (R18,000)</option>
-      <option value="directorySubscription">Creative Industry Directory Subscription</option>
-      <option value="other">Other (Please specify below)</option>
-    </select>
-    <p class="note">* Hold down the Ctrl (Windows) or Command (Mac) key to select multiple services.</p>
-
-    <label for="customService">Other Service Details (if applicable)</label>
-    <textarea id="customService" name="customService" rows="4" placeholder="Describe any additional services or requests"></textarea>
-
-    <!-- Project Details -->
-    <label for="budget">Estimated Budget</label>
-    <select id="budget" name="budget">
-      <option value="" disabled selected>Select estimated budget</option>
-      <option value="Under R5,000">Under R5,000</option>
-      <option value="R5,000 - R10,000">R5,000 - R10,000</option>
-      <option value="R10,000 - R20,000">R10,000 - R20,000</option>
-      <option value="R20,000+">R20,000+</option>
+    <label for="ownershipType">Ownership Type</label>
+    <select id="ownershipType" name="ownershipType" required>
+      <option value="" disabled selected>Select ownership type</option>
+      <option value="independent">Independent</option>
+      <option value="governmentBacked">Government-Backed</option>
+      <option value="partnership">Partnership</option>
     </select>
 
-    <label for="timeline">Preferred Timeline</label>
-    <select id="timeline" name="timeline" required>
-      <option value="" disabled selected>Select timeline</option>
-      <option value="1Week">1 Week</option>
-      <option value="2Weeks">2 Weeks</option>
-      <option value="1Month">1 Month</option>
-      <option value="custom">Custom Timeline (Specify below)</option>
+    <label for="affiliations">Affiliations or Memberships</label>
+    <textarea id="affiliations" name="affiliations" rows="3" placeholder="Enter affiliations or memberships"></textarea>
+
+    <!-- Geographic Location -->
+    <h3>3. Geographic Location</h3>
+    <label for="region">Region</label>
+    <select id="region" name="region" required>
+      <option value="" disabled selected>Select region</option>
+      <option value="southernAfrica">Southern Africa</option>
+      <option value="eastAfrica">East Africa</option>
+      <option value="westAfrica">West Africa</option>
+      <option value="centralAfrica">Central Africa</option>
+      <option value="northAfrica">North Africa</option>
     </select>
 
-    <label for="projectDetails">Additional Project Details</label>
-    <textarea id="projectDetails" name="projectDetails" rows="5" placeholder="Provide any further details about your project"></textarea>
+    <!-- Key Personnel -->
+    <h3>4. Key Personnel</h3>
+    <label for="keyPersonnel">Key Personnel</label>
+    <textarea id="keyPersonnel" name="keyPersonnel" rows="4" placeholder="List key contact persons and roles"></textarea>
 
-    <!-- Agreement and Submission -->
-    <label>
-      <input type="checkbox" id="agree" name="agree" required>
-      I agree to the terms and conditions of service.
-    </label>
+    <!-- Notes -->
+    <h3>5. Notes or Additional Comments</h3>
+    <label for="notes">Additional Comments</label>
+    <textarea id="notes" name="notes" rows="5" placeholder="Enter any additional comments"></textarea>
 
-    <button type="submit">Submit Partnership Form</button>
+    <button type="submit">Submit Form</button>
   </form>
 </body>
 </html>
