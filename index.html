@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Interactive Creative  Industry, Government, Corporate Business  Market Access Guide & Export Directory</title>
+  <title>Online Interactive Creative/Business Industry, Government, Corporate Business Market Access Guide & Export Directory</title>
   <style>
     /* Global Styles */
     body {
       font-family: Arial, sans-serif;
       background-image: url('https://i.ibb.co/82g6ZGL/SAMW-Screen.png');
-      background-size: cover;
+      background-size: 20%;
       background-position: center;
       margin: 0;
       padding: 0;
@@ -18,7 +18,7 @@
 
     form {
       max-width: 900px;
-      margin: 20px auto;
+      margin: 30px auto;
       background: rgba(255, 255, 255, 0.95);
       padding: 30px;
       border-radius: 10px;
@@ -29,7 +29,12 @@
     h2 {
       text-align: center;
       color: #444;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin-top: 30px;
+      color: #444;
     }
 
     label {
@@ -41,9 +46,9 @@
 
     input, select, textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-top: 5px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
@@ -94,11 +99,26 @@
     .grid-container .full-width {
       grid-column: span 2;
     }
+
+    .business-size-note {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .business-size-note ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .business-size-note li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <form action="/submit-company-details" method="POST">
-    <h2>Online Interactive Creative  Industry, Government, Corporate Business  Market Access Guide & Export Directory</h2>
+    <h2>Online Interactive Creative Industry, Government, Corporate Business Market Access Guide & Export Directory</h2>
 
     <!-- Core Company Information -->
     <h3>1. Core Company Information</h3>
@@ -180,10 +200,21 @@
     <label for="companySize">Size</label>
     <select id="companySize" name="companySize" required>
       <option value="" disabled selected>Select size</option>
-      <option value="small">Small</option>
-      <option value="medium">Medium</option>
-      <option value="large">Large</option>
+      <option value="micro">Microenterprise</option>
+      <option value="small">Small Enterprise</option>
+      <option value="medium">Medium Enterprise</option>
+      <option value="large">Large Enterprise</option>
     </select>
+<p class="business-size-note">
+  <strong>Guidance on business size classification based on the World Bank's criteria:</strong>
+  <ul>
+    <li><strong>Microenterprise:</strong> Up to 10 employees, total assets up to \$10,000, and annual sales up to \$100,000.</li>
+    <li><strong>Small Enterprise:</strong> Up to 50 employees, total assets up to \$3 million, and annual sales up to \$3 million.</li>
+    <li><strong>Medium Enterprise:</strong> Up to 300 employees, total assets up to \$15 million, and annual sales up to \$15 million.</li>
+    <li><strong>Large Enterprise:</strong> Businesses that exceed the criteria for medium enterprises (more than 300 employees, assets over \$15 million, or annual sales exceeding \$15 million).</li>
+  </ul>
+</p>
+
 
     <label for="ownershipType">Ownership Type</label>
     <select id="ownershipType" name="ownershipType" required>
@@ -193,32 +224,24 @@
       <option value="partnership">Partnership</option>
     </select>
 
-    <label for="affiliations">Affiliations or Memberships</label>
-    <textarea id="affiliations" name="affiliations" rows="3" placeholder="Enter affiliations or memberships"></textarea>
+    <label for="operationRegions">Operation Regions</label>
+    <input type="text" id="operationRegions" name="operationRegions" placeholder="Enter regions of operation" required>
 
-    <!-- Geographic Location -->
-    <h3>3. Geographic Location</h3>
+    <!-- Location & Personnel -->
+    <h3>3. Location & Personnel</h3>
     <label for="region">Region</label>
-    <select id="region" name="region" required>
-      <option value="" disabled selected>Select region</option>
-      <option value="southernAfrica">Southern Africa</option>
-      <option value="eastAfrica">East Africa</option>
-      <option value="westAfrica">West Africa</option>
-      <option value="centralAfrica">Central Africa</option>
-      <option value="northAfrica">North Africa</option>
-    </select>
+    <input type="text" id="region" name="region" placeholder="Enter region" required>
 
-    <!-- Key Personnel -->
-    <h3>4. Key Personnel</h3>
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" placeholder="Enter city" required>
+
+    <label for="postalCode">Postal Code</label>
+    <input type="text" id="postalCode" name="postalCode" placeholder="Enter postal code">
+
     <label for="keyPersonnel">Key Personnel</label>
-    <textarea id="keyPersonnel" name="keyPersonnel" rows="4" placeholder="List key contact persons and roles"></textarea>
+    <textarea id="keyPersonnel" name="keyPersonnel" rows="4" placeholder="Enter key personnel details"></textarea>
 
-    <!-- Notes -->
-    <h3>5. Notes or Additional Comments</h3>
-    <label for="notes">Additional Comments</label>
-    <textarea id="notes" name="notes" rows="5" placeholder="Enter any additional comments"></textarea>
-
-    <button type="submit">Submit Form</button>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>
